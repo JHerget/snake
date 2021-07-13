@@ -9,17 +9,18 @@ class Game {
     this.teleportGrape();
   }
 
-  draw(){
+  update(){
     if(!this.snake.alive){
       this.gameover = true;
-      // console.log("GAMEOVER!");
       counter++;
     }
-    
-    this.grape.draw();
 
+    this.snake.update();
+  }
+
+  draw(){
+    this.grape.draw();
     this.snake.draw();
-    this.snake.update(this);
   }
 
   teleportGrape(){
